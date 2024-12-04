@@ -9,7 +9,18 @@ document.addEventListener('DOMContentLoaded', function () {
       tabs.forEach(function (tab) {
         const li = document.createElement('li');
         li.className = 'tab-item';
-        li.textContent = `${tab.title} - ${tab.url}`;
+
+        const title = document.createElement('div');
+        title.className = 'tab-item-title';
+        title.textContent = tab.title;
+
+        const url = document.createElement('div');
+        url.className = 'tab-item-url';
+        url.textContent = tab.url;
+
+        li.appendChild(title);
+        li.appendChild(url);
+
         li.addEventListener('click', function () {
           chrome.tabs.update(tab.id, { active: true });
           window.close();
@@ -28,7 +39,18 @@ document.addEventListener('DOMContentLoaded', function () {
         if (tab.title.toLowerCase().includes(query.toLowerCase()) || tab.url.toLowerCase().includes(query.toLowerCase())) {
           const li = document.createElement('li');
           li.className = 'tab-item';
-          li.textContent = `${tab.title} - ${tab.url}`;
+
+          const title = document.createElement('div');
+          title.className = 'tab-item-title';
+          title.textContent = tab.title;
+
+          const url = document.createElement('div');
+          url.className = 'tab-item-url';
+          url.textContent = tab.url;
+
+          li.appendChild(title);
+          li.appendChild(url);
+
           li.addEventListener('click', function () {
             chrome.tabs.update(tab.id, { active: true });
             window.close();
