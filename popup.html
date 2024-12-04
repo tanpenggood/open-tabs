@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tab List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .tab-list {
+        list-style-type: none;
+        padding: 0;
+      }
+      .tab-item {
+        cursor: pointer;
+        padding: 5px;
+        border-bottom: 1px solid #ccc;
+      }
+      .tab-item:hover {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Open Tabs</h2>
+    <ul id="tab-list" class="tab-list"></ul>
+    <script src="popup.js"></script>
+  </body>
+</html>
