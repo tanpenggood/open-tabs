@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "Open Tabs",
-  "version": "1.0",
-  "description": "展示当前浏览器打开的窗口列表，包含标题和网址，点击可以跳转到对应的标签页。",
+  "version": "1.0.0",
+  "description": "Displays a list of tabs opened by the browser, including the title and URL, and jump to the corresponding tab when click the item.",
   "permissions": ["tabs", "activeTab"],
   "browser_action": {
     "default_icon": "icon.png",
