@@ -18,13 +18,15 @@ searchInput.addEventListener('input', (event) => {
 
 function loadTabs() {
   chrome.tabs.query({}, (tabs) => {
-    cachedTabs = tabs.map((tab) => ({
-      id: tab.id,
-      title: tab.title,
-      url: tab.url,
-      showTitle: truncateText(tab.title),
-      showUrl: truncateText(tab.url),
-    }));
+    cachedTabs = tabs
+      .map((tab) => ({
+        id: tab.id,
+        title: tab.title,
+        url: tab.url,
+        showTitle: truncateText(tab.title),
+        showUrl: truncateText(tab.url),
+      }))
+      .sort((a, b) => b.url.localeCompare(a.url));
     renderTabs(cachedTabs);
   });
 }
